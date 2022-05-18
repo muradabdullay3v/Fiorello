@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  background-color: red;
+  height: 20vh;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.topnav {
+  position: relative;
+  width: 100%;
+  background-color: aqua;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.topnav .topnav_logo {
+  width: 250px;
+  height: 30px;
+}
+
+.topnav .topnav_logo img {
+  max-width: 100%;
+}
+
+.topnav_links .dropdown, .topnav_links .search_icon, .topnav_links .basket {
+  display: inline-block;
+}
+
+.topnav_links .dropdown a, .topnav_links .search_icon a, .topnav_links .basket a {
+  margin-right: 40px;
+}
+
+.topnav_links .dropdown-content {
+  position: absolute;
+  max-width: 100%;
+  height: 200px;
+  top: 20px;
+  display: none;
+}
+
+.topnav_links .dropdown-content a {
+  display: block;
+}
+
+.topnav_links .dropdown-content .dropdown-content_list {
+  display: inline-block;
+}
+
+.topnav_links .dropdown-content .dropdown-content_list a {
+  margin: 0;
+}
+
+.topnav_links .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.topnav_links .dropdown:hover .dropdown-content.shop_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.topnav_links .droprigth-content {
+  display: none;
+  position: absolute;
+  left: 130px;
+  width: 200px;
+  margin-top: -30px;
+}
+
+.topnav_links .droprigth .post_types {
+  left: 80px;
+}
+
+.topnav_links .droprigth:hover .droprigth-content {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */
