@@ -5,29 +5,35 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .container {
   background-color: red;
   height: 20vh;
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .topnav {
   position: relative;
+  font-size: 13px;
+  font-weight: 500;
   width: 100%;
-  background-color: aqua;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .topnav .topnav_logo {
-  width: 250px;
+  width: 212px;
   height: 30px;
 }
 
@@ -35,32 +41,59 @@
   max-width: 100%;
 }
 
+.topnav_links .nav_drop {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 49px;
+  right: 35px;
+  color: #6b6b6b;
+}
+
 .topnav_links .dropdown, .topnav_links .search_icon, .topnav_links .basket {
+  padding: 50px 25px;
   display: inline-block;
 }
 
 .topnav_links .dropdown a, .topnav_links .search_icon a, .topnav_links .basket a {
-  margin-right: 40px;
+  text-decoration: none;
+  color: #6b6b6b;
+}
+
+.topnav_links .search_icon, .topnav_links .basket {
+  font-size: 16px;
+}
+
+.topnav_links .search_icon span, .topnav_links .basket span {
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.topnav_links .dropdown, .topnav_links .search_icon {
+  display: inline-block;
 }
 
 .topnav_links .dropdown-content {
   position: absolute;
+  background-color: #fff;
   max-width: 100%;
-  height: 200px;
-  top: 20px;
+  top: 70px;
+  margin-left: -25px;
   display: none;
 }
 
 .topnav_links .dropdown-content a {
   display: block;
+  margin: 16px 25px;
+  color: #000;
+  text-decoration: none;
 }
 
 .topnav_links .dropdown-content .dropdown-content_list {
   display: inline-block;
-}
-
-.topnav_links .dropdown-content .dropdown-content_list a {
-  margin: 0;
+  padding: 35px 20px;
 }
 
 .topnav_links .dropdown:hover .dropdown-content {
@@ -72,21 +105,136 @@
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  right: 350px;
+}
+
+.topnav_links .dropdown:hover .dropdown-content.shop_content a {
+  margin: 16px 0;
+}
+
+.topnav_links .dropdown:hover .dropdown-content.shop_content h2 {
+  margin-top: 25px;
 }
 
 .topnav_links .droprigth-content {
+  background-color: #fff;
   display: none;
   position: absolute;
-  left: 130px;
+  left: 162px;
   width: 200px;
   margin-top: -30px;
 }
 
 .topnav_links .droprigth .post_types {
-  left: 80px;
+  left: 120px;
 }
 
 .topnav_links .droprigth:hover .droprigth-content {
   display: block;
+  -webkit-animation: drop_rigth 1s forwards;
+          animation: drop_rigth 1s forwards;
+}
+
+.topnav_links .droprigth .elements_item {
+  left: 127px;
+}
+
+.topnav .underline_on_hover {
+  position: relative;
+}
+
+.topnav .underline_on_hover:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #4b4b4b;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.topnav .underline_on_hover:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+@media screen and (max-width: 1600px) {
+  .topnav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 70px;
+  }
+}
+
+.dropdown-content {
+  max-height: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  -webkit-animation: drop 1s forwards;
+          animation: drop 1s forwards;
+}
+
+.dropdown:hover .dropdown-content a, .dropdown:hover .dropdown-content h2 {
+  -webkit-animation: drop_text 2s forwards;
+          animation: drop_text 2s forwards;
+}
+
+@-webkit-keyframes drop {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 700px;
+  }
+}
+
+@keyframes drop {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 700px;
+  }
+}
+
+@-webkit-keyframes drop_text {
+  from {
+    color: #0000;
+  }
+  to {
+    color: #000;
+  }
+}
+
+@keyframes drop_text {
+  from {
+    color: #0000;
+  }
+  to {
+    color: #000;
+  }
+}
+
+@-webkit-keyframes drop_rigth {
+  from {
+    background-color: #0000;
+  }
+  to {
+    background-color: #fff;
+  }
+}
+
+@keyframes drop_rigth {
+  from {
+    background-color: #0000;
+  }
+  to {
+    background-color: #fff;
+  }
 }
 /*# sourceMappingURL=main.css.map */

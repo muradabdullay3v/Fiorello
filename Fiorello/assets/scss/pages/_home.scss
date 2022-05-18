@@ -1,45 +1,74 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .container{
     background-color: red;
     height: 20vh;
-    width: 1400px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .topnav{
     position: relative;
+    font-size: 13px;
+    font-weight: 500;
     width: 100%;
-    background-color: aqua;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     .topnav_logo{
-        width: 250px;
+        width: 212px;
         height: 30px;
         img{
             max-width: 100%;
         }
     }
     &_links{
+        .nav_drop{
+            border: none;
+            outline: none;
+            background-color: #fff;
+            font-size: 20px;
+            position:absolute;
+            top: 49px;
+            right: 35px;
+            color: rgb(107, 107, 107);
+        }
         .dropdown , .search_icon , .basket{
+           padding: 50px 25px;
             display: inline-block;
             a{
-                margin-right: 40px;
+                text-decoration: none;
+                color: rgb(107, 107, 107);
             }
+        }
+        .search_icon , .basket{
+            font-size: 16px;
+            span{
+                margin-left: 10px;
+                font-size: 13px;
+            }
+        }
+        .dropdown , .search_icon{
+            display: inline-block;
         }
         .dropdown-content{
             position: absolute;
+            background-color: #fff;
             max-width: 100%;
-            height: 200px;
-            top:20px;
+            top:70px;
+            margin-left: -25px;
             display: none;
             a{
                 display: block;
+                margin: 16px 25px;
+                color: #000;
+                text-decoration: none;
             }
             .dropdown-content_list{
                 display: inline-block;
-                a{
-                    margin: 0;
-                }
+                padding: 35px 20px;
             }
         }
         .dropdown{
@@ -50,25 +79,118 @@
                 .dropdown-content.shop_content{
                     display: flex;
                     gap: 20px;
+                    right: 350px;
+                    a{
+                        margin: 16px 0;
+                    }
+                    h2{
+                        margin-top: 25px;
+                    }
                 }
             }
           }
           .droprigth{
               &-content{
+                background-color: #fff;
                 display: none;
                 position: absolute;
-                left: 130px;
+                left: 162px;
                 width: 200px;
-                margin-top: -30px ;
+                margin-top: -30px;
               }
               .post_types{
-                  left: 80px;
+                  left: 120px;
               }
               &:hover{
                   .droprigth-content{
                       display: block;
+                      animation: drop_rigth 1s forwards;
                   }
               }
+              .elements_item{
+                  left: 127px;
+              }
           }
+    }
+        .underline_on_hover{
+            position: relative;
+        }
+
+        .underline_on_hover:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(75, 75, 75);
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        }
+        .underline_on_hover:hover:before {
+            visibility: visible;
+            width: 100%;
+          }
+
+}
+
+@media screen and (max-width:1600px) {
+    .topnav{
+        justify-content: space-between;
+        padding:0 70px;
+    }
+}
+
+
+.dropdown-content {
+	max-height: 0;
+}
+
+.dropdown:hover .dropdown-content {
+	animation: drop 1s forwards;
+
+	a,h2 {
+		animation: drop_text 2s forwards;
+	}
+}
+
+@keyframes drop {
+	from {
+		max-height: 0;
+	}
+
+	to {
+		max-height: 700px;
+	}
+}
+
+@keyframes drop_text {
+	from {
+		color: #0000;
+	}
+
+	to {
+		color: #000;
+	}
+}
+
+@keyframes drop_rigth {
+	from {
+		background-color: #0000;
+	}
+
+	to {
+		background-color: #fff;
+	}
+}
+
+
+@media screen and (max-width:900px) {
+    .topnav{
+        
+    }
+
+    .topnav.responsive{
+
     }
 }
