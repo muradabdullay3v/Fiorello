@@ -30,10 +30,8 @@ body{
             outline: none;
             background-color: #fff;
             font-size: 20px;
-            position:absolute;
-            top: 49px;
-            right: 35px;
             color: rgb(107, 107, 107);
+            display: none;
         }
         .dropdown , .search_icon , .basket{
            padding: 50px 25px;
@@ -187,10 +185,52 @@ body{
 
 @media screen and (max-width:900px) {
     .topnav{
+        padding: 20px;
+        .nav_drop{
+            display: block;
+        }
+        .dropdown , .basket , .search_icon{
+            display: none;
+        }
+    }
+}
+
+.sidebar{
+    position: fixed;
+    background-color: aqua;
+    z-index: 1;
+    width: 420px;
+    height: 1019px;
+    top: 0;
+    right: 0;
+    padding-top: 80px;
+    .side-dropdown{
+        margin-bottom: 20px;
+        .side-dropdown_button{
+            padding:16px 25px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .side-dropdown-content{
+            margin-top: 16px;
+            display: none;
+            a{
+                display: block;
+                padding: 7px 25px;
+                text-decoration: none;
+                font-size: 13px;
+            }
+        }
+        .sub_side-dropdown-content{
+            display: none;
+        }
+        &:hover .side-dropdown-content{
+            display: block;
+        }
+        .sub_side-dropdown:hover .sub_side-dropdown-content{
+            display: block;
+        }
         
     }
-
-    .topnav.responsive{
-
-    }
+    
 }

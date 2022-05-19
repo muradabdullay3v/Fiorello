@@ -46,10 +46,8 @@ body {
   outline: none;
   background-color: #fff;
   font-size: 20px;
-  position: absolute;
-  top: 49px;
-  right: 35px;
   color: #6b6b6b;
+  display: none;
 }
 
 .topnav_links .dropdown, .topnav_links .search_icon, .topnav_links .basket {
@@ -236,5 +234,62 @@ body {
   to {
     background-color: #fff;
   }
+}
+
+@media screen and (max-width: 900px) {
+  .topnav {
+    padding: 20px;
+  }
+  .topnav .nav_drop {
+    display: block;
+  }
+  .topnav .dropdown, .topnav .basket, .topnav .search_icon {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  background-color: aqua;
+  z-index: 1;
+  width: 420px;
+  height: 1019px;
+  top: 0;
+  right: 0;
+  padding-top: 80px;
+}
+
+.sidebar .side-dropdown {
+  margin-bottom: 20px;
+}
+
+.sidebar .side-dropdown .side-dropdown_button {
+  padding: 16px 25px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.sidebar .side-dropdown .side-dropdown-content {
+  margin-top: 16px;
+  display: none;
+}
+
+.sidebar .side-dropdown .side-dropdown-content a {
+  display: block;
+  padding: 7px 25px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.sidebar .side-dropdown .sub_side-dropdown-content {
+  display: none;
+}
+
+.sidebar .side-dropdown:hover .side-dropdown-content {
+  display: block;
+}
+
+.sidebar .side-dropdown .sub_side-dropdown:hover .sub_side-dropdown-content {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
