@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./assets/js/main.js" defer></script>
     <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="./assets/js/main.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -212,10 +212,10 @@
         </nav>
         <nav class="sidebar">
             <div class="side-dropdown">
-                <a href="#" class="side-dropdown_button">
+                <a class="side-dropdown_button" href="javascript:void(0);" onclick="homedrop()">
                     HOME
                 </a>
-                <div class="side-dropdown-content">
+                <div class="side-dropdown-content" id="homedwn">
                     <a href="#">Main Home</a>
                     <a href="#">Grid Home</a>
                     <a href="#">Flower Shop</a>
@@ -226,18 +226,18 @@
                 </div>
             </div>
             <div class="side-dropdown">
-                <a href="#" class="side-dropdown_button">
+                <a class="side-dropdown_button" href="javascript:void(0);" onclick="pagedrop()">
                     PAGES
                 </a>
-                <div class="side-dropdown-content">
+                <div class="side-dropdown-content" id="pagedwn">
                     <a href="#">About Us</a>
                     <a href="#">FAQ Page</a>
                     <a href="#">Contact Us</a>
                 </div>
             </div>
             <div class="side-dropdown">
-                <a href="#" class="side-dropdown_button">SHOP</a>
-                <div class="side-dropdown-content">
+                <a class="side-dropdown_button" href="javascript:void(0);" onclick="shopdrop()">SHOP</a>
+                <div class="side-dropdown-content" id="shopdwn">
                     <div class="sub_side-dropdown">
                         <a href="#" class="sub_side-dropdown_button">
                             PRODUCT TYPES

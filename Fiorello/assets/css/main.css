@@ -267,6 +267,7 @@ body {
   padding: 16px 25px;
   text-decoration: none;
   font-size: 13px;
+  color: #000;
 }
 
 .sidebar .side-dropdown .side-dropdown-content {
@@ -285,7 +286,7 @@ body {
   display: none;
 }
 
-.sidebar .side-dropdown:hover .side-dropdown-content {
+.sidebar .side-dropdown .side-dropdown-content.opened {
   display: block;
 }
 
