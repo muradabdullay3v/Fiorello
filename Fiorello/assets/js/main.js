@@ -227,6 +227,15 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active_filter";
   });
 }
+var btnContainer = document.getElementById("filter_btns");
+var btns = btnContainer.getElementsByClassName("filter-btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active_filters");
+    current[0].className = current[0].className.replace(" active_filters", "");
+    this.className += " active_filters";
+  });
+}
 
 $(document).ready(function(){
   $('.slick-carousel-items').slick({
@@ -238,6 +247,6 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 4500,
         cssEase: 'linear',
-        arrows: true,
+        arrows: false,
   });
 });

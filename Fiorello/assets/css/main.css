@@ -686,6 +686,10 @@ body {
   color: red;
 }
 
+.filter_btns .active_filters {
+  color: red;
+}
+
 .filter_container {
   max-width: 1400px;
   margin: 0 auto;
