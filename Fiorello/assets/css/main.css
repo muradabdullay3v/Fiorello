@@ -721,16 +721,25 @@ body {
   cursor: pointer;
 }
 
-.all_filter-items .filter-item p {
-  text-align: center;
+.all_filter-items .filter-item .fltr_btn {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.all_filter-items .filter-item button {
   font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  width: 100px;
+  border: none;
+  background-color: transparent;
   color: #b3b3b3;
-  margin-top: 10px;
+  margin: 10px auto;
   -webkit-transition: color .5s;
   transition: color .5s;
 }
 
-.all_filter-items .filter-item p:hover {
+.all_filter-items .filter-item button:hover {
   color: red;
   cursor: pointer;
 }
@@ -1319,5 +1328,113 @@ body {
 
 #slick-carousel {
   padding: 100px 0;
+}
+
+.fa-magnifying-glass {
+  font-size: 20px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-bag-shopping {
+  font-size: 20px;
+}
+
+.basket {
+  position: relative;
+}
+
+.basket_dropdown_content {
+  border: 1px solid #e7e7e7;
+  width: 250px;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  font-size: 13px;
+  font-weight: 500;
+  color: #707070;
+  left: -100px;
+  max-height: 0;
+  top: 120px;
+}
+
+.basket_dropdown_content p {
+  padding: 25px;
+}
+
+@-webkit-keyframes basket {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 700px;
+  }
+}
+
+@keyframes basket {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 700px;
+  }
+}
+
+@-webkit-keyframes basket_text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes basket_text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.basket:hover {
+  cursor: pointer;
+}
+
+.basket:hover .basket_dropdown_content {
+  -webkit-animation: basket 1s forwards;
+          animation: basket 1s forwards;
+  display: block;
+}
+
+.basket:hover .basket_dropdown_content p, .basket:hover .basket_dropdown_content h5, .basket:hover .basket_dropdown_content h6, .basket:hover .basket_dropdown_content .button {
+  -webkit-animation: basket_text 2s forwards;
+          animation: basket_text 2s forwards;
+}
+
+.cart-item {
+  position: relative;
+}
+
+.cart-item h5 {
+  font-size: 12px;
+  padding: 10px 20px;
+}
+
+.cart-item .cart-item_price {
+  padding: 10px 20px 10px 20px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.cart-item .button {
+  color: red;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

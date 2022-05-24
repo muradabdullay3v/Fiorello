@@ -250,3 +250,70 @@ $(document).ready(function(){
         arrows: false,
   });
 });
+
+let addBtns = document.querySelectorAll(".fltr_btn button");
+var totalvalue = 0;
+[...addBtns].forEach(button=>{
+  button.onclick = function() {
+    let counter = 1;
+    let h5 = button.parentNode.parentNode.querySelector("h5").innerText;
+    let price = button.innerText.substr(1);
+    let basket = document.getElementById("basket");
+    let items = document.querySelectorAll(".cart-item");
+    let product = `<div class="cart-item">
+                        <h5>${h5}</h5>
+                        <h6 class="cart-item_price"><span>${counter}</span> x $${price}</h6>
+                        <button class = "button" onclick="DeleteRow(this)"><i class="fa-solid fa-xmark"></i></button>
+                    </div>`;
+                    [...items].forEach(item => {
+                      if (item.innerHTML.includes(h5)) {
+                        let current_count = parseInt(item.querySelector("span").innerText) + 1;
+                        item.querySelector("h6 span").innerText = current_count;
+                      }
+                    });
+                    if (basket.innerHTML.includes(h5)) {
+                      console.log("ok");
+                    }
+                    else{
+                      basket.innerHTML += product;
+                    }
+    // totalvalue += parseInt(price);
+    // var total = `<h3 class = "total">Total : $<span>${totalvalue}</span></h3>`;
+    //                 if(basket.innerText.includes("Total")){
+    //                   basket.querySelector("h3 span").innerText = `${totalvalue}`;
+    //                   console.log("Sol");
+    //                 }
+    //                 else{
+    //                   basket.innerHTML += total;
+    //                 }
+                    var cart = document.querySelector("#basket").innerHTML;
+                    localStorage.setItem("basket", JSON.stringify(cart));
+                    current_cart = JSON.parse(localStorage.getItem("basket"));
+                    document.getElementById("no_products").style.display = "none";
+  };
+});
+
+
+var current_cart = JSON.parse(localStorage.getItem("basket"));
+if (current_cart !== null) {
+  basket.innerHTML = current_cart;
+}
+else if(current_cart === null){
+  basket.innerHTML = '<p id="no_products">No products in the cart.</p>';
+}
+
+
+function DeleteRow(button) {
+  var p=button.parentNode;
+      p.parentNode.removeChild(p);
+      cart = document.querySelector("#basket").innerHTML;
+      localStorage.setItem("basket", JSON.stringify(cart));
+      current_cart = JSON.parse(localStorage.getItem("basket"));
+      if(current_cart == "<p id=\"no_products\" style=\"display: none;\">No products in the cart.</p>"){
+        basket.innerHTML = '<p id="no_products">No products in the cart.</p>';
+        document.getElementById("no_products").style.display = "block";
+        console.log("Salam");
+        cart = document.querySelector("#basket").innerHTML;
+        localStorage.setItem("basket", JSON.stringify(cart));
+      }
+ }
